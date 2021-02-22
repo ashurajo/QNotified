@@ -25,13 +25,12 @@ import ltd.nextalone.util.method
 import ltd.nextalone.util.replaceFalse
 import me.singleneuron.qn_kernel.data.requireMinQQVersion
 import me.singleneuron.util.QQVersion
-import nil.nadph.qnotified.SyncUtils
 import nil.nadph.qnotified.base.annotation.FunctionEntry
 import nil.nadph.qnotified.hook.CommonDelayableHook
 import nil.nadph.qnotified.util.Utils
 
 @FunctionEntry
-object HidePartyTogether : CommonDelayableHook("na_hide_main_ui_menu_kt", SyncUtils.PROC_MAIN) {
+object HidePartyTogether : CommonDelayableHook("na_hide_party_together_kt") {
     override fun initOnce(): Boolean {
         return try {
             "Lcom/tencent/avgame/util/AvGameEntranceUtil;->a()Z".method.replaceFalse(this)
